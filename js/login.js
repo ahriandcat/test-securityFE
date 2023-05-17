@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => {
         const data = response.data;
         localStorage.setItem('accessToken', data.access_token);
-        localStorage.setItem('refreshToken', data.refresh_token);
         console.log('Đăng nhập thành công');
         window.location.href = 'index.html'; // Chuyển hướng sau khi đăng nhập thành công
       })
