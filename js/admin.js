@@ -1,3 +1,4 @@
+import { handleErrors } from './handleErrors.js';
 document.addEventListener('DOMContentLoaded', function() {
     const userList = document.getElementById('userList');
     const token = localStorage.getItem('accessToken');
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       })
       .catch(error => {
-        console.error('Lỗi:', error);
+        handleErrors(error);
       });
   });
   
