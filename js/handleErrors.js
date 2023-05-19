@@ -18,6 +18,10 @@ export function handleErrors(error) {
           console.error('Lỗi 404 - Not Found:', error);
           // Xử lý lỗi 404
           break;
+          case 500:
+            console.error('Lỗi 500 - Internal Server Error:', error);
+            // Xử lý lỗi 500
+            break;
         default:
           console.error('Lỗi không xác định:', error);
           // Xử lý lỗi không xác định

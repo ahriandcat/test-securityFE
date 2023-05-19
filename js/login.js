@@ -56,16 +56,11 @@ googleLoginButton.addEventListener('click', function(event) {
 });
 
 const handleGoogleLogin = () => {
-  // Sử dụng thư viện google-auth-library để xác thực Google và lấy thông tin người dùng
-  // Gửi yêu cầu xác thực đến server backend
   axios
     .get('http://localhost:8082/api/v1/auth/oauth2')
     .then(response => {
       console.log('======================')
       console.log(response)
-      // const redirectUrl = response.data.redirectUrl;
-      // Chuyển hướng đến trang xác thực Google
-      // window.location.href = redirectUrl;
     })
     .catch(error => {
       console.error(error);

@@ -13,9 +13,10 @@ function getUserInfo() {
   // Gửi yêu cầu API với headers
   axios.get('http://localhost:8082/api/v1/user/detail', { headers })
     .then(response => {
-      document.getElementsByTagName('body').style.display = 'block';
+      console.log('===================')
+      console.log(response);
+      document.getElementById('body').style.display = 'block';
       const userInfo = response.data;
-      // Hiển thị thông tin người dùng trên trang
       document.getElementById('email').textContent = userInfo.email;
       document.getElementById('firstname').textContent = userInfo.firstname;
       document.getElementById('lastname').textContent = userInfo.lastname;
