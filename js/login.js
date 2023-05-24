@@ -65,7 +65,7 @@ if (window.location.pathname === '/api/v1/auth/oauth2') {
 
   // Gửi yêu cầu lấy thông tin người dùng đến API
   axios
-    .get('http://localhost:8082/api/v1/auth/oauth2', {
+    .get('http://localhost:8082/login/oauth2/code/google', {
     })
     .then(response => {
       const email = response.data;
