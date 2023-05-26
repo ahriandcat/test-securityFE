@@ -54,29 +54,23 @@ googleLoginButton.addEventListener('click', function(event) {
   event.preventDefault();
   handleGoogleLogin();
 });
-
 const handleGoogleLogin = () => {
   window.location.href = 'http://localhost:8082/oauth2/authorization/google';
 };
-// Xử lý callback sau khi đăng nhập thành công
-if (window.location.pathname === '/api/v1/auth/oauth2') {
-  // const urlParams = new URLSearchParams(window.location.search);
-  // const authorizationCode = urlParams.get('code');
 
-  // Gửi yêu cầu lấy thông tin người dùng đến API
+// Xử lý callback sau khi đăng nhập thành công
+if (window.location.pathname === '/login/oauth2/code/google') {
   axios
-    .get('http://localhost:8082/login/oauth2/code/google', {
-    })
+    .get('http://localhost:8082/api/v1/auth/oauth2')
     .then(response => {
-      const email = response.data;
-      console.log(email);
+      const refreshToken = response.data;
+      console.log(refreshToken);
       // Tiếp tục xử lý thông tin người dùng
     })
     .catch(error => {
       console.error(error);
     });
 }
-
 
 
 
